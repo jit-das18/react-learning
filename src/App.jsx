@@ -1,18 +1,17 @@
-import MyComponent from "./mycomponent";
-
+import Navbar from "./Navbar";
+import Hero from "./Hero";
+import About from "./About";
+import Footer from "./Footer";
 function App(){
   return(
-    <div>
-    <h1>Hi, i'm Jit😀</h1>
-    <h2>day 1 of react</h2>
-    <p>i will become a fullstack debeloper!</p>
-    <MyComponent/>
-    <ul>
-      <li>home</li>
-      <li>contact</li>
-      <li>profile</li>
-    </ul>
-    </div>
+    <>
+    <Navbar/>
+    <Hero/>
+    <About/>
+    <Footer/>
+    
+
+    </>
   );
   }
 export default App;
