@@ -1,21 +1,52 @@
-import Navbar from "./Navbar";
-import Hero from "./Hero";
-import About from "./About";
-import Footer from "./Footer";
-import Card from "./Card";
-import Student from "./Student";
-import Profilecard from "./Profilecard";
-function App(){
-  return(
-    <>
-    <Profilecard name="Jit Das" role="future full stack developer" age={22} college="brainware university" city="Barasat"skills="Python,java,javascript,web development" role="Fresher"/>
-    <Profilecard name="Aman" role="frontend developer" age={23} college="Adamas University" city="kolkata"skills="java,c,c++,bootstrap,php" role="fresher"/>
-    <Profilecard name="moupriya" role="backend developer" age={22} college="brainware university" city="Nandigram"skills="can talk sweetly,intelligence,art,sing,mind scrapper" role="intermediate"/>
-    <Profilecard name="Shrabanti Das" role="makeup  artist" age={32} college="Barasat College" city="Barasat" skills="nail painting,bridal mackup,nail design" role="Professional"/>
-  
-  
+import { useState } from "react";
+function app(){
+  const [count,setCount]=useState(0);
+  function increase(){
+        setCount(count+1);
+      }
+     
+  function Decrease(){
+      if (count>0){
+        setCount(count-1);
+      } 
+    }
+    function increase5(){
+      
+        setCount(count+5);
+      }
+     function decrease5(){
+      if (count>=5){
+        setCount(count-5);
+      }
+    }
 
-    </>
+
+  return (
+    <>
+    <h2>Counter App</h2>
+    <b>Counter: {count}</b>
+    <h3>{count > 0 ? "positive" : "zero"}</h3>
+    {count === 10 ?(<h2>you have reached 10!</h2>):(<h2>keep going....</h2>)}
+    <button onClick = {increase}>
+      +
+    </button>
+    
+     <button onClick = {Decrease}>
+      -
+    </button>
+    <button onClick = {increase5}>
+      increase by 5
+    </button>
+    <button onClick = {decrease5}>
+      Decrease by 5
+    </button>
+
+     <button onClick = {()=>setCount(0)}>
+      Reset
+    </button>
+     
+    </> 
+
   );
-  }
-export default App;
+}
+export default app;
