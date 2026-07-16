@@ -1,52 +1,72 @@
 import { useState } from "react";
 function app(){
-  const [count,setCount]=useState(0);
-  function increase(){
-        setCount(count+1);
-      }
-     
-  function Decrease(){
-      if (count>0){
-        setCount(count-1);
-      } 
-    }
-    function increase5(){
-      
-        setCount(count+5);
-      }
-     function decrease5(){
-      if (count>=5){
-        setCount(count-5);
-      }
-    }
-
-
+  const [name,setName]=useState("");
+  const [show,setShow]=useState(true);
+  const[showPassword,setShowPassword]=useState(false);
+  const [email,setEmail]=useState("");
+  const [city,setCity]=useState("");
   return (
     <>
-    <h2>Counter App</h2>
-    <b>Counter: {count}</b>
-    <h3>{count > 0 ? "positive" : "zero"}</h3>
-    {count === 10 ?(<h2>you have reached 10!</h2>):(<h2>keep going....</h2>)}
-    <button onClick = {increase}>
-      +
+    <input type="text" placeholder="Enter your name" onChange={(e) =>setName(e.target.value)}/>
+    <input type="email" placeholder="Enter your email" onChange={(e) =>setEmail(e.target.value)}/>
+    <input type="text" placeholder="Enter your city" onChange={(e) =>setCity(e.target.value)}/>
+    <h1>Name: {name}</h1>
+    <h1>Email: {email}</h1>
+    <h1>City: {city}</h1>
+    <button onClick={()=>setShow(!show)}>
+      Toggle
     </button>
-    
-     <button onClick = {Decrease}>
-      -
+    {show&&<h2>React is awesome🎉</h2>}
+    <input type={showPassword?"text":"password"} placeholder="enter password"/>
+    <button onClick={()=>setShowPassword(!showPassword)}>
+    show/hide
     </button>
-    <button onClick = {increase5}>
-      increase by 5
-    </button>
-    <button onClick = {decrease5}>
-      Decrease by 5
-    </button>
-
-     <button onClick = {()=>setCount(0)}>
-      Reset
-    </button>
-     
     </> 
 
+
+
+
   );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 export default app;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
